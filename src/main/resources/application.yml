@@ -1,0 +1,31 @@
+com.didispace.blog.name: Spring Boot
+com.didispace.blog.title: Spring Boot Title
+com.didispace.blog.desc: ${com.didispace.blog.name}正在努力写《${com.didispace.blog.title}》
+
+spring:
+  profiles:
+    active: @spring-package-profile@
+  mvc:
+        throw-exception-if-no-handler-found: true
+  mail:
+    username: lr3699@163.com
+    password: Jmoke3699
+    host: smtp.163.com
+    default-encoding: UTF-8
+
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+
+swagger:
+  title:  Spring Boot Swagger Title
+  name: Spring Boot Swagger Name
+  description: Spring Boot Swagger Description
+  exclude-path: /error
+  version:  1.0
+
+#关闭安全认证校验
+management:
+  security:
+    enabled: false
+
+

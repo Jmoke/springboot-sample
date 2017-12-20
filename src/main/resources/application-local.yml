@@ -1,0 +1,58 @@
+
+
+server:
+  port: 8080
+
+spring:
+  devtools:
+    livereload:
+      enabled: true
+    restart: true
+
+
+  datasource:
+      druid:
+            type: com.alibaba.druid.pool.DruidDataSource
+            url: jdbc:mysql://192.168.6.65/lightningcash_dev?useUnicode=true&characterEncoding=utf-8&verifyServerCertificate=false&useSSL=false&requireSSL=false
+            username: root
+            password: 123456
+            initial-size: 3
+            max-active: 200
+            min-idle: 3
+            max-wait: 60000
+            validation-query: SELECT 1 FROM DUAL
+            driver-class-name: com.mysql.jdbc.Driver
+            log-abandoned: true
+            pool-prepared-statements: true
+            max-open-prepared-statements: 50
+            remove-abandoned: true
+            remove-abandoned-timeout-millis: 1800
+            time-between-eviction-runs-millis: 60000
+            min-evictable-idle-time-millis: 300000
+            test-while-idle: true
+            test-on-borrow: false
+            test-on-return: false
+            stat-view-servlet:
+              login-username: admin
+              login-password: 123456
+            filter: stat
+
+  thymeleaf:
+      prefix: classpath:/templates/
+      suffix: .html
+      mode: HTML5
+      encoding: utf-8
+      content-type: text/html
+      cache: false
+
+logging:
+    path: ${catalina.base}/logs/
+    level: info
+
+
+swagger:
+  enabled: true
+
+
+
+
